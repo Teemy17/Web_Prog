@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="Lab.js"></script>
+    <title>CV</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-textarea {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        margin-top: 30px;
+    }
+
+    .myDiv {
+        margin-left: 20px;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    .myDiv2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .myDiv3 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .myDiv4 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="image-textarea">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                style="width:200px;height:200px">
+            <h4>Profile:</h4>
+            <form>
+                <textarea id="profile" rows="4" cols=""></textarea>
+            </form>
+        </div>
+        <div class="myDiv">
+            <h3>Personal Information:</h3>
+            <form>
+                <label for="Name">Name:</label><br><br>
+                <input type="text" id="name"><br><br>
+                <label for="Age">Age:</label><br><br>
+                <input type="age" id="age"><br><br>
+                <label for="Email">Email:</label><br><br>
+                <input type="email" id="email"><br><br>
+                <label for="Phone">Phone:</label><br><br>
+                <input type="tel" id="phone"><br><br>
+            </form>
+        </div>
+
+    </div>
+    <div class="myDiv2">
+        <h3>Address:</h3>
+        <form>
+            <input type="text" id="street"><br><br>
+            <input type="text" id="city"><br><br>
+            <select id="country">
+                <option value="Thailand">Please choose a country</option>
+                <option value="Thailand">Thailand</option>
+            </select>
+        </form>
+
+    </div>
+    <div class="myDiv3">
+        <h3>Education:</h3>
+        <form>
+            <label for="University">University:</label><br><br>
+            <input type="text" id="university"><br><br>
+            <label for="Degree">Degree:</label><br><br>
+            <input type="text" id="degree"><br><br>
+            <label for="Graduation">Year of Graduation:</label><br><br>
+            <input type="date" id="graduationYear"><br><br>
+        </form>
+        <h3>Skills and Experience:</h3>
+        <form>
+            <label for="Skills">Skills:</label><br><br>
+            <textarea id="skills" rows="4" cols=""></textarea><br><br>
+            <label for="Experience">Experience:</label><br><br>
+            <textarea id="experience" rows="4" cols=""></textarea><br><br>
+        </form>
+        <h3>Contacts: </h3>
+        <form>
+            <label for="Reference">Reference:</label><br><br>
+            <textarea id="ref" rows="4" cols=""></textarea><br><br>
+            <label for="favoritecolor">Favorite color:</label><br><br>
+            <input type="color" id="favColour"><br><br>
+        </form>
+    </div>
+    <div class="myDiv4">
+        <button type="submit" onclick="displayResume()">Submit</button>
+</body>
+
+</html>
