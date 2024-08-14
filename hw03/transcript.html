@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unofficial Transcript Form</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            font-size: 12px;
+            font-family: 'Times New Roman';
+        }
+
+        div {
+            padding-left: 20px;
+        }
+
+        table {
+            width: 50%;
+            margin: auto;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        table input {
+            margin: 2.5px;
+            border: 0;
+            width: 215px;
+        }
+
+        .border {
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-collapse: collapse;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div>
+            <table>
+                <tr>
+                    <td colspan="3" style="text-align: center; padding-top: 10px;">
+                        <label for="Header" style="font-size: 16px; font-weight: bold;">( Unofficial Transcript
+                            )</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center;">
+                        <label for="school" style="font-size: 13px;">School of Engineering</label>
+                    </td>
+                    <td colspan="4">
+                        <img src="Teem.jpeg" alt="selfpic" width="90" height="90">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name"><b><i>Name</b></i></label>
+                        <input type="text" name="name" id="name" placeholder="Mr./Miss Nxxxx Xxxxxxx">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dateOfBirth"><b><i>Date of Birth</b></i></label>
+                        <input type="text" name="dateOfBirth" id="dateOfBirth" placeholder="MMMM DD, 20xx">
+                    </td>
+                    <td>
+                        <label for="studentId"><b><i>Student ID</b></i></label>
+                        <input type="text" name="studentId" id="studentId" placeholder="65xxxxxx"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dateOfAdmission"><b><i>Date of Admission</b></i></label>
+                        <input type="text" name="dateOfAdmission" id="dateOfAdmission" placeholder="20xx">
+                    </td>
+                    <td>
+                        <label for="dateOfGraduation"><b><i>Date of Graduation</b></i></label>
+                        <input type="text" name="dateOfGraduation" id="dateOfGraduation" placeholder="N/A">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="degree"><b><i>Degree</b></i></label>
+                        <input type="text" name="degree" id="degree" placeholder="Bachelor of Engineering"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="major"><b><i>Major</b></i></label>
+                        <input type="text" name="major" id="major" placeholder="Software Engineering ">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table style="border-top:1px solid black; border-bottom:1px solid black;" class="border">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="border">Course Title</th>
+                        <th colspan="1" class="border">Credit</th>
+                        <th colspan="1" class="border">Grade</th>
+                        <th colspan="2" class="border">Course Title</th>
+                        <th colspan="1" class="border">Credit</th>
+                        <th colspan="1" class="border">Grade</th>
+                    </tr>
+                </thead>
+                <tborder>
+                    <tr style="border-top:1px solid black;">
+                        <td colspan="2" style="text-align: center;"><label for="tranferCredit"><b><u>Transfer
+                                        Credit</b></u></label></td>
+                        <td class="border"></td>
+                        <td class="border"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border"></td>
+                        <td class="border"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006208"
+                                style="width: 50px;">
+                            <input type="text" name="eng1" id="eng1" placeholder="ACADEMIC ENGLISH 1"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit1" id="credit1"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade1" id="grade1"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006209"
+                                style="width: 50px;">
+                            <input type="text" name="eng2" id="eng2" placeholder="ACADEMIC ENGLISH 2"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit2" id="credit2"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade2" id="grade2"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><label for="gpa"><b><u>GPA:
+                                </b></u></label><input type="text" name="gpa" id="gpa" placeholder="XXX" style="width: 30px;"></td>
+                        <td class="border"></td>
+                        <td class="border"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><label for="sem1"><b><u>1st Semester, Year, 2021-2022
+                                </b></u></label></td>
+                        <td class="border"></td>
+                        <td class="border"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006208"
+                                style="width: 50px;">
+                            <input type="text" name="eng1" id="eng1" placeholder="ACADEMIC ENGLISH 1"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit1" id="credit1"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade1" id="grade1"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006209"
+                                style="width: 50px;">
+                            <input type="text" name="eng2" id="eng2" placeholder="ACADEMIC ENGLISH 2"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit2" id="credit2"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade2" id="grade2"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006210"
+                                style="width: 50px;">
+                            <input type="text" name="eng3" id="eng3" placeholder="ACADEMIC ENGLISH 3"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit3" id="credit3"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade3" id="grade3"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006211"
+                                style="width: 50px;">
+                            <input type="text" name="eng4" id="eng4" placeholder="ACADEMIC ENGLISH 4"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit4" id="credit4"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade4" id="grade4"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006212"
+                                style="width: 50px;">
+                            <input type="text" name="eng5" id="eng5" placeholder="ACADEMIC ENGLISH 5"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit5" id="credit5"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade5" id="grade5"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="courseId" id="courseId" placeholder="13006213"
+                                style="width: 50px;">
+                            <input type="text" name="eng6" id="eng6" placeholder="ACADEMIC ENGLISH 6"
+                                style="width: 275px;">
+                        </td>
+                        <td class="border" style="text-align: center;"><input type="text" name="credit6" id="credit6"
+                                placeholder="3" style="width: 10px; text-align: center;"></td>
+                        <td class="border" style="text-align: center;"><input type="text" name="grade6" id="grade6"
+                                placeholder="X" style="width: 10px; text-align: center;"></td>
+                        <td colspan="2" class="border"></td>
+                        <td class="border">
+
+                    </tbody>
+            </table>
+        </div>
+
+        </border>
+
+</html>
