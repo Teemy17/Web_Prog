@@ -1,0 +1,16 @@
+td,
+th {
+    border: 1px solid;
+}
+
+.colorful {
+    background-color: lightblue;
+}
+
+.colorful:hover {
+    background-color: lightgreen;
+}
+
+.resmueTable {
+    font-family: Arial, Helvetica, sans-serif;
+}
