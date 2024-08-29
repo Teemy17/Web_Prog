@@ -7,7 +7,7 @@ thead.exchangeheader th {
     color: white;
 }
 
-tbody.evenrow tr:nth-child(even) {
+.evenrow  {   /* if use pseudo-class: .evenrow:nth-child(even) */
     background-color: #d8bfd8;
 }
 
