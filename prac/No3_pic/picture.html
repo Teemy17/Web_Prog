@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+<style>
+    img {
+        width: 150px;
+        height: 100px;
+    }
+</style>
+</head>
+<body>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>
+            <img src="left-arrow.png" id="left-arrow" onclick="decrease_num()"><br> 
+            </td>
+            <td rowspan="2">
+                <img src="1.png" id="num-display">
+            </td> 
+            <td>
+                <img src="right-arrow.png" id="right-arrow" onclick="increase_num()">
+            </td>          
+        </tr>
+        <tr>
+            <td>
+                down
+            </td>
+            <td>
+                up
+            </td>
+        </tr>
+    </table>
+    <script>
+        let currentnumber = 1;
+
+        function Updatenum() {
+            document.getElementById("num-display").src = currentnumber + ".png";
+        }
+
+        function decrease_num() {
+            if (currentnumber > 1) {
+                currentnumber--;
+                Updatenum();
+            }
+        }
+
+        function increase_num() {
+            if (currentnumber < 9) {
+                currentnumber++;
+                Updatenum();
+            }
+        }
+
+    </script>
+</body>

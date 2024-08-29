@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+}
+
+thead.exchangeheader th {
+    background: #800080;
+    color: white;
+}
+
+tbody.evenrow tr:nth-child(even) {
+    background-color: #d8bfd8;
+}
+
+.tablefont {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+tbody tr td:hover {
+    color: red
+}
