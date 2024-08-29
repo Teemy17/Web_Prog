@@ -1,0 +1,70 @@
+td,
+th {
+  border: 1px solid;
+}
+
+.colorful {
+  background-color: lightblue;
+}
+
+.colorful:hover {
+  background-color: lightgreen;
+}
+
+.resmueTable {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-column {
+  width: 35%;
+  max-width: 250px;
+}
+
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+html {
+  font-size: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  html {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .pic {
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+}
+

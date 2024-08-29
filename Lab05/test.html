@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My resume</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <form>
+        <div class="resmueTable">
+            <table class="colorful">
+                <thead>
+                    <tr>
+                        <th colspan="2" rowspan=""></th>
+                        <th style="border-bottom: 1px solid">Personal Infomation:</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th rowspan=""></th>
+                        <th colspan="2">
+                            Name:
+                            <br />
+                            <input type="text" id="name" name="name" placeholder="John Doe" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="" style="align-items: center" class="left-column">
+                            <img src="https://th.bing.com/th/id/OIP.tvaMwK3QuFxhTYg4PSNNVAHaHa?rs=1&pid=ImgDetMain"
+                              class="pic"  width="100" alt="profile"/>
+                        </td>
+                        <th colspan="2">
+                            Age:
+                            <br />
+                            <input type="range" id="age" name="age" placeholder="0" />
+                            <span id="ageValue"></span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="border-bottom: 1px solid"></th>
+                        <th colspan="">
+                            Email:
+                            <br />
+                            <input type="email" id="email" name="email" placeholder="myEmail@gmail.com" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Profile:
+                            <br />
+                            <textarea id="profile"></textarea>
+                        </td>
+                        <th colspan="">
+                            Phone:
+                            <br />
+                            <input type="tel" id="phone" name="phone" placeholder="123-456-7890" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2" colspan="2" style="border-bottom: 1px solid" class="left-column">
+                            Address:
+                        </th>
+                        <th>Education:</th>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <th colspan="2">
+                            <input type="text" id="street" name="address" placeholder="Maple Street" />
+                        </th>
+                        <th colspan="">University:</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <input type="text" id="city" name="city" placeholder="California" />
+                        </th>
+                        <th colspan="">
+                            <input type="text" id="university" name="university" placeholder="KMITL" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="">Degree:</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="left-column">
+                            <select name="country" id="country">
+                                <option value="">Select a country</option>
+                                <option value="Canada">Canada</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input type="text" id="degree" name="degree" placeholder="Software Engineering" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="">Year of Graduation:</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th>
+                            <input type="date" id="graduation" name="graduationYear" placeholder="2021-01-01" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="border-bottom: 1px solid" class="left-column">Contact:</th>
+                        <th colspan="" style="border-bottom: 1px solid">
+                            Skills & Experience:
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="left-column">Reference:</th>
+                        <th colspan="">Skills:</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="left-column">
+                            <textarea type="text" id="ref"></textarea>
+                        </td>
+                        <td colspan="">
+                            <textarea type="text" id="skills"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="left-column">Favorite Colour:</th>
+                        <th colspan="">Experience:</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="left-column">
+                            <input type="color" id="favColour" name="color" />
+                        </th>
+                        <td colspan="">
+                            <textarea type="text" id="experience"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="left-column"></th>
+                        <td colspan="">
+                            <button type="submit" onclick="{displayResume()}">Submit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <script src="lab.js"></script>
+</body>
+
+</html>
