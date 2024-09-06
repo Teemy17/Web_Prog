@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Item Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+        </tr>
+    </table>
+    <form>
+        <button type="button" onclick="resetList()">Reset List</button>
+    </form>
+    <h1>Add Item</h1>
+    <form>
+        <label for="item">Name:</label>
+        <input type="text" id="item" name="item"><br><br>
+        <label for="quantity">Amount:</label>
+        <input type="number" id="quantity" name="quantity"><br><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price"><br><br>
+        <button type="button" onclick="addItem()">Add</button>
+        <button type="button" onclick="clearForm()">Clear</button>
+    </form>
+    <script>
+        function addItem() {
+            var item = document.getElementById("item").value;
+            var quantity = document.getElementById("quantity").value;
+            var price = document.getElementById("price").value;
+            var table = document.getElementsByTagName("table")[0];
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            cell1.innerHTML = item;
+            cell2.innerHTML = quantity;
+            cell3.innerHTML = price;
+            clearForm();
+        }
+        function clearForm() {
+            document.getElementById("item").value = "";
+            document.getElementById("quantity").value = "";
+            document.getElementById("price").value = "";
+        }
+        function resetList() {
+            var table = document.getElementsByTagName("table")[0];
+            table.innerHTML = "<tr><th>Item Name</th><th>Amount</th><th>Price</th></tr>";
+        }
+    </script>
+</body>

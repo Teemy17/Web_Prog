@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var firstDay = 3;
+            var lastDay = 31;
+            var table = document.createElement("table");
+            var caption = table.createCaption();
+            caption.innerHTML = "August 2024";
+            var row = table.insertRow(0);
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            for (var i = 0; i < 7; i++) {
+                cell = row.insertCell(i);
+                cell.innerHTML = days[i];
+            }
+            document.body.appendChild(table);
+            var count = 1;
+            for (var i = 0; i < 6; i++) {
+                row = table.insertRow(i + 1);
+                for (var j = 0; j < 7; j++) {
+                    if (i == 0 && j < firstDay) {
+                        cell = row.insertCell(j);
+                        cell.innerHTML = "";
+                    } else if (count > lastDay) {
+                        break;
+                    } else {
+                        cell = row.insertCell(j);
+                        cell.innerHTML = count;
+                        count++;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+
+<!-- var count = 1;
+    for (var i = 0; i < 6; i++) {
+        row = table.insertRow(i + 1);
+        for (var j = 0; j < 7; j++) {
+            if (i == 0 && j < firstDay) {
+                cell = row.insertCell(j);
+                cell.innerHTML = "";
+            } else if (count > lastDay) {
+                break;
+            } else {
+                cell = row.insertCell(j);
+                cell.innerHTML = count;
+                count++;
+            }
+        }
+    } -->
