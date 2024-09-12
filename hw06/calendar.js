@@ -1,6 +1,6 @@
-var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+var days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 var month_name = ['1/2024', '2/2024', '3/2024', '4/2024', '5/2024', '6/2024', '7/2024', '8/2024', '9/2024', '10/2024', '11/2024', '12/2024'];
-var start_date = [1, 4, 5, 1, 3, 6, 1, 4, 0, 2, 5, 0];
+var start_date = [0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6];
 var month = 0;
 
 function createCalendar() {
@@ -78,13 +78,17 @@ function show_monthOf2024(month) {
 show_monthOf2024(month);
 
 function back() {
-    month = (month + 11) % 12;
+    if (month > 0) {
+        month = (month + 11) % 12
+    }
     document.getElementById("monthHead").innerHTML = month[month];
     show_monthOf2024(month);
 }
 
 function forward() {
-    month = (month + 1) % 12;
+    if (month < 11) {
+        month = (month + 1) % 12
+    }
     document.getElementById("monthHead").innerHTML = month[month];
     show_monthOf2024(month);
 }
