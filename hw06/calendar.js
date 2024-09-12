@@ -9,13 +9,13 @@ function createCalendar() {
     document.writeln("<thead id='table_head'>");
     document.writeln("<tr>");
 
-    document.writeln("<td style='padding: 0px;'>");
+    document.writeln("<td>");
     document.writeln("<button onclick='back()'> &lt; </button>");
     document.writeln("</td>");
 
     document.writeln("<td colspan='5' id='monthHead'></td>");
 
-    document.writeln("<td style='padding: 0px;'>");
+    document.writeln("<td>");
     document.writeln("<button onclick='forward()'> &gt; </button>");
     document.writeln("</td>");
 
