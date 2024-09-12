@@ -1,6 +1,6 @@
 var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 var month_name = ['1/2024', '2/2024', '3/2024', '4/2024', '5/2024', '6/2024', '7/2024', '8/2024', '9/2024', '10/2024', '11/2024', '12/2024'];
-var StartDate = [1, 4, 5, 1, 3, 6, 1, 4, 0, 2, 5, 0];
+var start_date = [1, 4, 5, 1, 3, 6, 1, 4, 0, 2, 5, 0];
 var month = 0;
 
 function createCalendar() {
@@ -43,7 +43,7 @@ function show_monthOf2024(month) {
     var table = document.getElementById("tableBody");
     table.innerHTML = "";
     var day = 1;
-    var day_of_week = StartDate[month];
+    var day_of_week = start_date[month];
     var days_of_month = 31;
 
     if (month == 1) {
