@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q1</title>
+    <style>
+        #timeDisplay {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        table {
+            margin: 0 auto;
+            align-items: center;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .editable {
+            background-color: #f9f9f9;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .remove-btn {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Online Timer</h1>
+    <h2 id="timeDisplay">Current time: </h2>
+    <button id="editButton">Edit</button>
+    <button id="doneButton" class="hidden">Done</button>
+    <button id="addRowButton" class="hidden">Add Row</button>
+    <div id="message"></div>
+    <table id="timeTable" border="1">
+        <tr>
+            <th>Time</th>
+            <th>Alert Word</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td contenteditable="false">09.00</td>
+            <td contenteditable="false">Wake up</td>
+            <td class="action-cell hidden"><span class="remove-btn">Remove</span></td>
+        </tr>
+        <tr>
+            <td contenteditable="false">11.05</td>
+            <td contenteditable="false">Lunch Time</td>
+            <td class="action-cell hidden"><span class="remove-btn">Remove</span></td>
+        </tr>
+        <tr>
+            <td contenteditable="false">15.30</td>
+            <td contenteditable="false">Take a break</td>
+            <td class="action-cell hidden"><span class="remove-btn">Remove</span></td>
+        </tr>
+    </table>
+
+    <script>
+        var alertTime = ["09.00", "11.05", "15.30"];
+        var alertMessages = [
+            "Wake up!",         // Message for 09:00
+            "Lunch Time!",     // Message for 11:05
+            "Take a break!"    // Message for 15:30
+        ];
+        var customDate = new Date();
+        var intervalId;
+        var alerted = false;
+
+        function checkTime() {
+            var hours = customDate.getHours().toString().padStart(2, '0');
+            var minutes = customDate.getMinutes().toString().padStart(2, '0');
+            var time = hours + "." + minutes;
+
+            for (var i = 0; i < alertTime.length; i++) {
+                if (time == alertTime[i] && !alerted) {
+                    alerted = true;
+                    alert(alertMessages[i]);
+                }
+            }
+
+            setTimeout(function () {
+                alerted = false;
+            }, 60000);
+        }
+
+        function displayTime() {
+            var hours = customDate.getHours().toString().padStart(2, '0');
+            var minutes = customDate.getMinutes().toString().padStart(2, '0');
+            var seconds = customDate.getSeconds().toString().padStart(2, '0');
+            var time = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("timeDisplay").innerText = "Current time: " + time;
+        }
+
+        function updateCustomTime() {
+            customDate.setSeconds(customDate.getSeconds() + 1);
+            displayTime();
+            checkTime();
+        }
+
+        function toggleEditMode() {
+            var isEditing = document.getElementById("timeTable").classList.toggle("editable");
+            document.getElementById("editButton").classList.toggle("hidden", isEditing);
+            document.getElementById("doneButton").classList.toggle("hidden", !isEditing);
+            document.getElementById("addRowButton").classList.toggle("hidden", !isEditing);
+
+            var cells = document.querySelectorAll("#timeTable td");
+            cells.forEach(cell => {
+                cell.contentEditable = isEditing;
+            });
+
+            var actionCells = document.querySelectorAll(".action-cell");
+            actionCells.forEach(cell => {
+                cell.classList.toggle("hidden", !isEditing);
+            });
+
+            if (isEditing) {
+                attachRemoveEventListeners();
+            }
+        }
+
+        function saveChanges() {
+            alertTime = [];
+            alertMessages = [];
+
+            var rows = document.querySelectorAll("#timeTable tr");
+            for (var i = 1; i < rows.length; i++) {
+                var cells = rows[i].querySelectorAll("td");
+                var time = cells[0].innerText.trim();
+                var message = cells[1].innerText.trim();
+                if (time && message) {
+                    alertTime.push(time);
+                    alertMessages.push(message);
+                }
+            }
+
+            toggleEditMode();
+        }
+
+        function addRow() {
+            var table = document.getElementById("timeTable");
+            var row = table.insertRow(-1);
+            var timeCell = row.insertCell(0);
+            var messageCell = row.insertCell(1);
+            var actionCell = row.insertCell(2);
+            timeCell.contentEditable = "true";
+            messageCell.contentEditable = "true";
+            actionCell.innerHTML = '<span class="remove-btn">Remove</span>';
+            attachRemoveEventListeners(); // Ensure the new row has a functional Remove button
+        }
+
+        function removeRow(event) {
+            var row = event.target.closest("tr");
+            if (row) {
+                row.parentNode.removeChild(row);
+            }
+        }
+
+        function attachRemoveEventListeners() {
+            var removeButtons = document.querySelectorAll(".remove-btn");
+            removeButtons.forEach(button => {
+                button.removeEventListener("click", removeRow); // Remove any existing event listeners
+                button.addEventListener("click", removeRow);   // Add the new event listener
+            });
+        }
+
+        document.getElementById("editButton").addEventListener("click", toggleEditMode);
+        document.getElementById("doneButton").addEventListener("click", saveChanges);
+        document.getElementById("addRowButton").addEventListener("click", addRow);
+
+        customDate = new Date();
+        intervalId = setInterval(updateCustomTime, 10);
+
+        // Initialize event listeners for existing rows
+        attachRemoveEventListeners();
+    </script>
+</body>
+
+</html>

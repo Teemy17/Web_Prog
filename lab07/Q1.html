@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q1</title>
+    <style>
+        #timeDisplay {
+            text-align: center;
+            font-size: 24px;
+        }
+        table {
+            margin: 0 auto;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Online Timer</h1>
+    <h2 id="timeDisplay">Current time: </h2>
+    <script>
+        var alertTime = ["09.00", "11.05", "15.30", "18.15"];
+        var alertMessages = [
+            "Time to wake up!",         // Message for 09:00
+            "Meeting with the team!",   // Message for 11:05
+            "Lunch break!",             // Message for 15:30
+            "Evening workout!"          // Message for 18:15
+        ];
+        var customDate = new Date();
+        var intervalId;
+        var alerted = false; 
+
+        function checkTime() {
+            var hours = customDate.getHours().toString().padStart(2, '0');
+            var minutes = customDate.getMinutes().toString().padStart(2, '0');
+            var time = hours + "." + minutes;
+
+            for (var i = 0; i < alertTime.length; i++) {
+                if (time == alertTime[i] && !alerted) { 
+                    alerted = true; 
+                    alert(alertMessages[i]); 
+                }
+            }
+
+            setTimeout(function () {
+                alerted = false;
+            }, 60000);
+        }
+
+        function displayTime() {
+            var hours = customDate.getHours().toString().padStart(2, '0');
+            var minutes = customDate.getMinutes().toString().padStart(2, '0');
+            var seconds = customDate.getSeconds().toString().padStart(2, '0');
+            var time = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("timeDisplay").innerText = "Current time: " + time;
+        }
+
+        function updateCustomTime() {
+            customDate.setSeconds(customDate.getSeconds() + 1);
+            displayTime();
+            checkTime();
+        }
+
+        customDate = new Date();
+
+        intervalId = setInterval(updateCustomTime, 1);
+    </script>
+    <table border="1">
+        <tr>
+            <td>
+               Time 
+            </td>
+            <td>
+                Alert Word
+            </td>
+        </tr>
+        <tr>
+            <td>
+                09.00
+            </td>
+            <td>
+                Wake up
+            </td>
+        </tr>
+        <tr>
+            <td>
+                11.05
+            </td>
+            <td>
+                Lunch Time
+            </td>
+        </tr>
+        <tr>
+            <td>
+                15.30
+            </td>
+            <td>
+                Take a break
+            </td>
+    </table>
+</body>
+
+</html>

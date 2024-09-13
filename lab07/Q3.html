@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://ict11.ce.kmitl.ac.th/webprog/resources/JSONQ1.htm -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Bill</title>
+    <link rel="stylesheet" type="text/css" href="./Bill_files/JSONLabBill.css" />
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <table border="1" align="center" id="originalTable">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Item 1</td>
+                <td>1</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Item 2</td>
+                <td>2</td>
+                <td>200</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Item 3</td>
+                <td>3</td>
+                <td>300</td>
+                <td>900</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Item 4</td>
+                <td>4</td>
+                <td>400</td>
+                <td>1600</td>
+            </tr>
+            <tr>
+                <td colspan="4">Total</td>
+                <td>3000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 2%">
+        <textarea rows="10" cols="50" id="displayTextarea" placeholder="Your JSON Here"></textarea>
+    </div>
+
+    <div class="button" style="text-align: center; margin-top: 1%; margin-bottom: 1%">
+        <!-- change later -->
+        <button onclick="convert()">Convert</button>
+    </div>
+
+    <table border="1" align="center" id="newTable"></table>
+</body>
+
+</html>
