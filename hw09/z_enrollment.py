@@ -17,9 +17,9 @@ class Course(persistent.Persistent):
         return self.credit
      
     def scoreGrading(self, score): 
-        for g in self.gradeScheme: 
-            if g["min"] <= score <= g["max"]: 
-                return g["Grade"]
+        for grade in self.gradeScheme: 
+            if grade["min"] <= score <= grade["max"]: 
+                return grade["Grade"]
     
     def setGradeScheme(self, gradeScheme):
         self.gradeScheme = gradeScheme
@@ -46,7 +46,7 @@ class Student(persistent.Persistent):
     def setName(self, name): 
         self.name = name
         
-    def printTranscript(self): #edit
+    def printTranscript(self): 
         print("Transcript")
         print(f"ID:  {self.id}  Name: {self.name}")
         print("Course list")
@@ -100,6 +100,3 @@ class Enrollment(persistent.Persistent):
 
     def printDetail(self): 
         print(self.__str__())
-
-
-    
